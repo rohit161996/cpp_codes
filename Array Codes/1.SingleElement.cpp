@@ -5,7 +5,8 @@ int findSingleElement(int arr[], int size)
 {
     int ans = 0;
 
-    // To find the final answer we need to XOR all the elements
+    // To find the single repeating element 
+    // we need to XOR all the elements
     for(int i=0; i<size; i++){
         ans = ans ^ arr[i];
     }
