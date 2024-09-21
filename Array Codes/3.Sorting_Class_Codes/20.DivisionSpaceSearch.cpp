@@ -2,11 +2,17 @@
 using namespace std;
 
 int getQuotient(int divident, int divisor){
+    int ans = -1;
+
+    if(divisor == -1){
+        ans = divident * -1;
+        return ans;
+    }
+    
     int start = -1 * divident;
     int end = divident;
     int mid = start + ((end-start)/2);
 
-    int ans = INT_MIN;
     while(start <= end){
         int val = mid * divisor;
         if(val == divident){
@@ -24,15 +30,15 @@ int getQuotient(int divident, int divisor){
             // Move to the left
             end = mid - 1;
         }
-        mid = start + ((end-start)/2);
+        mid = start + ((end-start) >> 2);
     }
     return ans;
 }
 
 int main(){
 
-    int divd = -17;
-    int divs = -4;
+    int divd = -2147483648;
+    int divs = -1;
 
     // Aim is to find the quotient
     int ans = getQuotient(abs(divd), abs(divs));
