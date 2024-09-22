@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-pair<int, int> twoSum(int arr[], int size, int target){
+pair<int, int> twoSum_brute(int arr[], int size, int target){
     
     pair<int, int> ans = make_pair(-1,-1);
     // Take an element
@@ -29,7 +29,8 @@ int main(){
     int size = 5;
     int target = 35;
 
-    pair<int,int> ans = twoSum(arr, size, target);
+    pair<int,int> ans = twoSum_brute(arr, size, target);
     cout << "The pair is "<< ans.first <<" and "<< ans.second;
+    
     return 0;
 }
